@@ -1,4 +1,16 @@
 #include "monty.h"
+/**
+* m_stack - prints top value of stack
+* @head: stack head
+* @line_num: line number
+* Return: nothing
+*/
+void m_stack(stack_t **head, unsigned int line_num)
+{
+	(void)head;
+	(void)line_num;
+	cont.is_stack = 0;
+}
 
 /**
 * add_stack - adds a new node to the head of the stack

@@ -1,5 +1,5 @@
 #include "monty.h"
-
+cont_t cont = {NULL, NULL, NULL, 0};
 /**
 * main - Monty code interpretation
 * @argc:command line argument count
@@ -12,13 +12,13 @@ int main(int argc, char *argv[])
 	char *temp_buff;
 	size_t size = 0;
 	ssize_t read_line = 1;
-	stack_t *stack = NULL;
+	stack_t *head = NULL;
 	unsigned int line_num = 0;
 
 	if (argc != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
-		return (EXIT_FAILURE);
+		exit (EXIT_FAILURE);
 	}
 	file = fopen(argv[1], "r");
 
@@ -36,11 +36,11 @@ int main(int argc, char *argv[])
 		{
 			cont.temp_buff = temp_buff;
 			line_num++;
-			execute(temp_buff, &stack, line_num, file);
+			execute(temp_buff, &head, line_num, file);
 		}
 	}
 	free(temp_buff);
-	free_stack(stack);
+	free_stack(head);
 	fclose(file);
-	return (EXIT_SUCCESS);
+	return (0);
 }

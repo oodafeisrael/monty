@@ -62,10 +62,9 @@ int execute(char *temp_buff, stack_t **head, unsigned int line_num,
 		FILE *file);
 ssize_t getstdin(char **lineptr, int file);
 ssize_t getline(char **lineptr, size_t *n, FILE *stream);
-void m_stack(stack_t **head, unsigned int line_num);
+void m_stack(stack_t **head, unsigned int Line_num);
 void m_queue(stack_t **head, unsigned int line_num);
 void opc_instruct_exec(char *opcode, char *arg, stack_t **head, unsigned int
 		line_num, FILE * file);
-int execute(char *temp_buff, stack_t **head, unsigned int line_num, 
-		FILE *file);
+int execute(char *temp_buff, stack_t **head, unsigned int line_num, FILE *file);
 #endif
